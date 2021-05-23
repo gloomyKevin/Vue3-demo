@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app1"></div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        // need compiler
+        const tpl = {
+            template: '<div>hello world<div>'
+        }
+        const app = Vue.createApp(tpl)
+        app.mount('#app')
+
+        // don't need compiler
+        Vue.createApp({
+            render() {
+                return Vue.h('#app1', {})
+            }
+        })
+    </script>
+</body>
+
+</html>
